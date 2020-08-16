@@ -1,0 +1,38 @@
+#include <iostream>
+
+using namespace std;
+
+int BLANK = 0;
+int XMOVE = 1;
+int OMOVE = 2;
+
+int board[3][3] = {{0,2,0},
+                   {1,1,1},
+                   {0,2,0}};
+
+string output = "";
+
+void printBoard() {
+  cout << "\t1\t2\t3" << endl;
+
+  for (int x = 0; x < 3; x++) {
+    output = (static_cast<char>(97 + x))       ;
+    cout << output << endl;
+    for (int y = 0; y < 3; y++) {
+      if (board[x][y] == BLANK) {
+        output += " \t";
+      } else if (board[x][y] == XMOVE) {
+        output += "X\t";
+      } else if (board[x][y] == OMOVE) {
+        output += "O\t";
+      }
+    }
+    cout << output << endl;
+  }
+}
+
+int main() {
+  printBoard();
+	  
+  return 0;
+}
